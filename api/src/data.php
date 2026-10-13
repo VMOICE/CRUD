@@ -4,6 +4,7 @@
 
 require_once __DIR__ . '/../config/config.php';
 
+// Adiciona ID = 1 se for a primeira incersão de usuário    
 function emptyData(): array
 {
     return ['users' => [], 'nextId' => 1];
