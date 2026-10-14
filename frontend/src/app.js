@@ -1,11 +1,13 @@
+// Importações de funções da API e do DOM
 import { renderUsers, findUserById } from './scripts/dom/render.js';
 import { createUser } from './scripts/api/create.js';
 import { deleteUser } from './scripts/api/delete.js';
 import { updateUser, patchUser } from './scripts/api/update.js';
 
+// Define URL da API
 const apiUrl = import.meta.env.VITE_API_URL ?? 'http://localhost:8000/api/users';
 
-// Referências do DOM
+//Captura de elementos, referências do DOM
 const form = document.getElementById('create-user-form');
 const formError = document.getElementById('form-error');
 const formTitle = document.getElementById('form-title');
@@ -29,6 +31,7 @@ function hideError() {
 }
 
 // --- Helpers de edição ---
+// Permite pegar o usuário a partir do botão clicado no card, sem precisar de outro GET
 function getUserFromCard(button) {
     const card = button.closest('.user-card');
     return findUserById(Number(card.id));
