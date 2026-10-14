@@ -1,8 +1,10 @@
+// Importa funções da api e do DOM
 import { renderUsers, findUserById } from './scripts/dom/render.js';
 import { createUser } from './scripts/api/create.js';
 import { deleteUser } from './scripts/api/delete.js';
 import { updateUser, patchUser } from './scripts/api/update.js';
 
+//define a URL da API
 const apiUrl = import.meta.env.VITE_API_URL ?? 'http://localhost:8000/api/users';
 
 // Referências do DOM
